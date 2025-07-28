@@ -24,6 +24,11 @@ const pedidoSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Repartidor',
         required: true
+    },
+    estado: {
+        type: String,
+        enum: ['pendiente', 'completado', 'cancelado'],
+        default: 'pendiente'
     }
 }, { timestamps: true });
 
